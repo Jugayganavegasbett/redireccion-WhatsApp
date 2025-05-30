@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redireccionando a WhatsApp...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #25D366;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .spinner {
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      border-top: 5px solid #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  </style>
+  <script>
+    // Redireccionar después de 2 segundos
+    setTimeout(() => {
+      const phone = "5492235456990";
+      const message = encodeURIComponent("Quiero jugar con mi Bono");
+      const url = `https://wa.me/${phone}?text=${message}`;
+      window.location.href = url;
+    }, 2000);
+  </script>
+</head>
+<body>
+  <h1>Redireccionando a WhatsApp...</h1>
+  <p>Un momento, por favor</p>
+  <div class="spinner"></div>
+</body>
+</html>
+
